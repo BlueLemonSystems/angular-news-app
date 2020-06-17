@@ -1,0 +1,7 @@
+<h3>Datos del usuario</h3>
+<p>El usuario seleccionado es:</p>
+<p>{{user?.name}}</p>
+<p *ngIf="isLoading">Cargando...</p>
+
+<a routerLink="..">Regresar</a>
+<button (click)="goBack()">Volver</button>
