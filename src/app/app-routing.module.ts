@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthenticationModule } from './authentication/authentication.module';
+
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { UsersComponent } from './pages/users/users.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
@@ -14,6 +16,7 @@ const routes: Routes = [
     { path: '', component: UsersListComponent },
     { path: ':userId', component: UserFormComponent }
   ] },
+  { path: 'auth', loadChildren: './authentication/authentication.module#AuthenticationModule' },
   { path: '**', component: NotFoundComponent }
 ];
 

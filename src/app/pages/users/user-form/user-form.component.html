@@ -1,6 +1,31 @@
 <h3>Datos del usuario</h3>
 <p>El usuario seleccionado es:</p>
 <p>{{user?.name}}</p>
+
+<p>Es valido? {{form.valid}}</p>
+
+<form [formGroup]="form" (submit)="saveUser()">
+    <div>
+      <input type="text" name="nombre" formControlName="name" placeholder="Nombre de la persona">
+      {{form.controls.name.valid}}
+    </div>
+    <div>
+      <input type="text" name="nombredeusuario" formControlName="username" placeholder="Nombre de usuario">
+      <span *ngIf="form.controls.username.errors && form.controls.username.dirty">
+        {{form.controls.username.errors.required ? getErrorMessage('required') : getErrorMessage('minLenght')}}
+      </span>
+    </div>
+    <div>
+      <input type="email" name="correo" formControlName="email"  placeholder="Correo">
+      <span *ngIf="form.controls.email.errors && form.controls.email.dirty">
+        {{form.controls.email.errors.required ? getErrorMessage('required') : getErrorMessage('email')}}
+      </span>
+    </div>
+    <div>
+      <button [disabled]="form.invalid">Guardar</button>
+    </div>
+</form>
+
 <p *ngIf="isLoading">Cargando...</p>
 
 <a routerLink="..">Regresar</a>

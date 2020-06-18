@@ -35,4 +35,8 @@ export class UserService {
   addUser(newUser:User) {
     this.users.push(newUser);
   }
+
+  save(user:User):Observable<any> {
+    return this.httpService.put('https://demo5574133.mockable.io/users', user);
+  }
 }

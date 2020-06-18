@@ -27,6 +27,12 @@ export class UsersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      if(params.success === 'true') {
+        this.showSuccessMessage();
+      }
+    });
   }
 
   userSelect(user:User, e) {
@@ -52,6 +58,10 @@ export class UsersListComponent implements OnInit {
     this.router.navigate([user.id], {
       relativeTo: this.activatedRoute
     });
+  }
+
+  showSuccessMessage() {
+    alert('Se guardo correctamente');
   }
 
 }

@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "ng serve --live-reload false",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-test": "ng build --baseHref=test/",
+    "build-prod": "ng build --prod --baseHref=admin/"
   },
   "private": true,
   "dependencies": {
