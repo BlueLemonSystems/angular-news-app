@@ -43,7 +43,7 @@ export class UserFormComponent implements OnInit {
 
   getUser(): void {
     this.isLoading = true;
-    this.userService.getUserDetails(this.userId).subscribe((response) => {
+    this.userService.getElement(this.userId).subscribe((response) => {
       this.user = response;
       this.isLoading = false;
     }, (err) => {
@@ -66,21 +66,21 @@ export class UserFormComponent implements OnInit {
 
   saveUser() {
   
-    if(this.form.valid) {
-      const user = this.form.getRawValue();
-      this.userService.save(user).subscribe(response => {
-        // Mostrar modal
-        this.router.navigate(['..'], {
-          relativeTo: this.activatedRoute,
-          queryParams: {
-            success: true
-          }
-        })
-      }, err => {
-        console.error('Fallo al guardar el usuario');
-        alert('Fallo al guardar el usuario');
-      })
-    }
+    // if(this.form.valid) {
+    //   const user = this.form.getRawValue();
+    //   this.userService.save(user).subscribe(response => {
+    //     // Mostrar modal
+    //     this.router.navigate(['..'], {
+    //       relativeTo: this.activatedRoute,
+    //       queryParams: {
+    //         success: true
+    //       }
+    //     })
+    //   }, err => {
+    //     console.error('Fallo al guardar el usuario');
+    //     alert('Fallo al guardar el usuario');
+    //   })
+    // }
     
   }
 

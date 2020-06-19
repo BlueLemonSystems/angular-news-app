@@ -19,12 +19,12 @@ export class UsersComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
   }
 
   getUsers(): void {
-    console.log(typeof this.userService.getUsers);
-    this.userService.getUsers().subscribe((response) => {
+    
+    this.userService.getAll().subscribe((response) => {
       this.users = response;
       console.log('This users: ', this);
       this.errorFlag = false;
@@ -33,13 +33,13 @@ export class UsersComponent implements OnInit {
       this.errorFlag = true;
     });
 
-    setTimeout(() => {
-      const newUser:User = {
-        name: 'New User',
-        username: 'newuser'
-      };
-      this.userService.addUser(newUser);
-    }, 2000);
+    // setTimeout(() => {
+    //   const newUser:User = {
+    //     name: 'New User',
+    //     username: 'newuser'
+    //   };
+    //   this.userService.addUser(newUser);
+    // }, 2000);
   }
 
   handleUserSelect(user:User) {
