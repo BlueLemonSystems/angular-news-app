@@ -20,5 +20,13 @@ export class CrudService {
   getElement(id:number):Observable<any> {
     return this.httpService.get(this.apiUrl + this.endpoint+'/'+id);
   }
+
+  create(data:any) {
+
+  }
+
+  save(id:number, data:any) {}
+
+  delete(id:number) {}
 }
 

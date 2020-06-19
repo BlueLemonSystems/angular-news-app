@@ -11,6 +11,9 @@ import { NotFoundComponent } from './pages/errors/not-found/not-found.component'
 import { UserFormComponent } from './pages/users/user-form/user-form.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { DataListComponent } from './shared/components/data-list/data-list.component';
+import { TodosComponent } from './pages/todos/todos.component';
+import { TodosListComponent } from './pages/todos/todos-list/todos-list.component';
+import { TodoStatusDirective } from './shared/directives/todo-status.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { DataListComponent } from './shared/components/data-list/data-list.compo
     NotFoundComponent,
     UserFormComponent,
     UsersListComponent,
-    DataListComponent
+    DataListComponent,
+    TodosComponent,
+    TodosListComponent,
+    TodoStatusDirective
   ],
   imports: [
     BrowserModule,
