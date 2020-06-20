@@ -14,7 +14,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [ 
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard] },
+  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard], data: { role: 'admin' } },
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard], children: [
     { path: '', component: UsersListComponent },
     { path: ':userId', component: UserFormComponent }

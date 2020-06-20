@@ -1,6 +1,6 @@
 <h2>Iniciar Sesion</h2>
 
-<p *ngIf="error">Credenciales incorrectas</p>
+<p id="error" *ngIf="error">Credenciales incorrectas</p>
 <form [formGroup]="form" (submit)="login()">
   <div>
     <input type="email" name="email" formControlName="email" placeholder="Correo electronico">
@@ -9,7 +9,7 @@
     <input type="password" name="password" formControlName="password" placeholder="Contraseña">
   </div>
   <div>
-    <button>Iniciar sesión</button>
+    <button id="submitBtn">Iniciar sesión</button>
   </div>
 </form>
 

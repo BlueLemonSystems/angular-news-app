@@ -14,6 +14,8 @@ import { DataListComponent } from './shared/components/data-list/data-list.compo
 import { TodosComponent } from './pages/todos/todos.component';
 import { TodosListComponent } from './pages/todos/todos-list/todos-list.component';
 import { TodoStatusDirective } from './shared/directives/todo-status.directive';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,16 @@ import { TodoStatusDirective } from './shared/directives/todo-status.directive';
     DataListComponent,
     TodosComponent,
     TodosListComponent,
-    TodoStatusDirective
+    TodoStatusDirective,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

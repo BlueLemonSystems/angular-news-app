@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/authentication/shared/services/authentication.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,7 @@ export class HttpService {
     });
   }
 
-  put(url:string, data:any) {
+  put(url:string, data:any):Observable<any> {
     const token = this.authService.getToken();
 
     const headers = new HttpHeaders({

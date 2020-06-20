@@ -1,0 +1,13 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <span><ng-content></ng-content></span>
+    </span>
+    <span class="spacer"></span>
+    <a routerLink="/auth/login" *ngIf="!logueado">Iniciar Sesion</a>
+    <a routerLink="/auth/login" (click)="logout()" *ngIf="logueado">Cerrar Sesion</a>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
